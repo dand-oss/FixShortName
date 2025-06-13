@@ -1,6 +1,15 @@
 cmake_minimum_required(VERSION 3.27)
 project(FixShortName LANGUAGES CXX)
 
+set(exename "FixShortName")
+
+###############
+# ASI default settings
+list(APPEND CMAKE_MODULE_PATH "$ENV{ASV_CMAKE}")
+include(asv_cmake_defaults)
+asv_cmake_defaults( )
+###############
+
 set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
@@ -8,7 +17,6 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_DEBUG_POSTFIX _d)
 
 # Define executable
-set(exename "FixShortName")
 add_executable(${exename})
 
 # Sources
